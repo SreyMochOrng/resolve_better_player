@@ -1,1 +1,2 @@
-# resolve_better_player
+# betterplayer
+Better video player
