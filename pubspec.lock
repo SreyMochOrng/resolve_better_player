@@ -74,11 +74,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_web_plugins:
-    dependency: transitive
-    description: flutter
-    source: sdk
-    version: "0.0.0"
   flutter_widgets:
     dependency: "direct main"
     description:
@@ -213,6 +208,7 @@ packages:
   video_player:
     dependency: "direct main"
     description:
+<<<<<<< HEAD
       name: video_player
       url: "https://pub.dartlang.org"
     source: hosted
@@ -231,6 +227,19 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.2+1"
+=======
+      path: video_player
+      relative: true
+    source: path
+    version: "0.10.7"
+  video_player_platform_interface:
+    dependency: transitive
+    description:
+      path: video_player_platform_interface
+      relative: true
+    source: path
+    version: "1.0.4"
+>>>>>>> 3755286 (Added video player and video player interface inside package)
   wakelock:
     dependency: "direct main"
     description:
