@@ -205,6 +205,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.8"
+<<<<<<< HEAD
   video_player:
     dependency: "direct main"
     description:
@@ -240,6 +241,8 @@ packages:
     source: path
     version: "1.0.4"
 >>>>>>> 3755286 (Added video player and video player interface inside package)
+=======
+>>>>>>> 81b490f (Added reusable video_player inside package)
   wakelock:
     dependency: "direct main"
     description:
