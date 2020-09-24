@@ -73,7 +73,7 @@ packages:
       name: flutter_widget_from_html_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.3"
+    version: "0.5.0+5"
   flutter_widgets:
     dependency: "direct main"
     description:
@@ -122,7 +122,6 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "1.8.0+1"
   petitparser:
     dependency: transitive
@@ -131,9 +130,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.4.0"
-=======
-    version: "1.9.0"
->>>>>>> 878fc90 (Updated deps, updated changelog)
   quiver:
     dependency: transitive
     description:
@@ -255,5 +251,9 @@ sdks:
     version: "0.1.4+2"
 sdks:
   dart: ">=2.9.0-14.0.dev <3.0.0"
+<<<<<<< HEAD
 >>>>>>> 878fc90 (Updated deps, updated changelog)
   flutter: ">=1.12.13+hotfix.5 <2.0.0"
+=======
+  flutter: ">=1.20.0 <2.0.0"
+>>>>>>> 9c60b58 (0.0.17 release)
