@@ -86,13 +86,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.5.0+5"
-  flutter_widgets:
-    dependency: "direct main"
-    description:
-      name: flutter_widgets
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.12"
   html:
     dependency: transitive
     description:
@@ -223,7 +216,6 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
     version: "2.0.8"
   video_player:
     dependency: "direct main"
@@ -257,17 +249,20 @@ packages:
       relative: true
     source: path
     version: "1.0.4"
-=======
     version: "2.1.0-nullsafety.3"
->>>>>>> b2c6e28 (Updated wakelock library)
+  visibility_detector:
+    dependency: "direct main"
+    description:
+      name: visibility_detector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.5"
   wakelock:
     dependency: "direct main"
     description:
       name: wakelock
       url: "https://pub.dartlang.org"
     source: hosted
-<<<<<<< HEAD
-<<<<<<< HEAD
     version: "0.1.3+4"
   xml:
     dependency: transitive
@@ -278,15 +273,10 @@ packages:
     version: "3.6.1"
 sdks:
   dart: ">=2.6.0 <3.0.0"
-=======
     version: "0.1.4+2"
 sdks:
   dart: ">=2.9.0-14.0.dev <3.0.0"
-<<<<<<< HEAD
->>>>>>> 878fc90 (Updated deps, updated changelog)
   flutter: ">=1.12.13+hotfix.5 <2.0.0"
-=======
-=======
     version: "0.2.0+1"
   wakelock_platform_interface:
     dependency: transitive
@@ -304,6 +294,4 @@ sdks:
     version: "0.1.0+2"
 sdks:
   dart: ">=2.10.0-110 <2.11.0"
->>>>>>> b2c6e28 (Updated wakelock library)
   flutter: ">=1.20.0 <2.0.0"
->>>>>>> 9c60b58 (0.0.17 release)

@@ -14,7 +14,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.27"
+    version: "0.0.29+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -445,6 +445,7 @@ packages:
       sha256: "80b3257d1492ce4d091729e3a67a60407d227c27241d6927be0130c98e741803"
       url: "https://pub.dev"
     source: hosted
+<<<<<<< HEAD
     version: "2.1.4"
   visibility_detector:
     dependency: "direct main"
@@ -455,6 +456,17 @@ packages:
     source: hosted
     version: "0.4.0+2"
   vm_service:
+=======
+    version: "2.1.0-nullsafety.3"
+  visibility_detector:
+    dependency: transitive
+    description:
+      name: visibility_detector
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.5"
+  wakelock:
+>>>>>>> 9ac7377 (Added back/forward buttons, removed big pause button)
     dependency: transitive
     description:
       name: vm_service
