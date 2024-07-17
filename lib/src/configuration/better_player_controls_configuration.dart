@@ -242,10 +242,10 @@ class BetterPlayerControlsConfiguration {
   }
 
   ///Setup BetterPlayerControlsConfiguration based on Theme options.
-  factory BetterPlayerControlsConfiguration.theme(ThemeData theme) {
-    return BetterPlayerControlsConfiguration(
-      textColor: theme.textTheme.labelLarge?.color ?? Colors.white,
-      iconsColor: theme.textTheme.bodyLarge?.color ?? Colors.white,
-    );
-  }
+  // factory BetterPlayerControlsConfiguration.theme(ThemeData theme) {
+  //   return BetterPlayerControlsConfiguration(
+  //     textColor: theme.textTheme.labelLarge?.color ?? Colors.white,
+  //     iconsColor: theme.textTheme.bodyLarge?.color ?? Colors.white,
+  //   );
+  // }
 }
