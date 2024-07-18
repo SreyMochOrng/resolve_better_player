@@ -4,7 +4,7 @@ version: 1.0.0+1
 publish_to: none
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
 
 dependencies:
   better_player:
@@ -15,7 +15,7 @@ dependencies:
     sdk: flutter
   path_provider: ^2.0.14
   visibility_detector: ^0.4.0+2
-  collection: ^1.17.0
+  collection: ^1.15.0
 
 dev_dependencies:
   flutter_test:
