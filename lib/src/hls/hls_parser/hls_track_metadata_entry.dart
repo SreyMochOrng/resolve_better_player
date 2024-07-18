@@ -16,6 +16,7 @@ class HlsTrackMetadataEntry {
   final List<VariantInfo>? variantInfos;
 
   @override
+  // ignore: non_nullable_equals_parameter
   bool operator ==(dynamic other) {
     if (other is HlsTrackMetadataEntry) {
       return other.groupId == groupId &&

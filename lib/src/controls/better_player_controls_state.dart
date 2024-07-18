@@ -2,7 +2,6 @@ import 'dart:io';
 import 'dart:math';
 import 'package:better_player/better_player.dart';
 import 'package:better_player/src/controls/better_player_clickable_widget.dart';
-import 'package:better_player/src/core/better_player_utils.dart';
 import 'package:collection/collection.dart' show IterableExtension;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -305,10 +304,10 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
   }
 
   Widget _buildTrackRow(BetterPlayerAsmsTrack track, String? preferredName) {
-    final int width = track.width ?? 0;
+    // final int width = track.width ?? 0;
     final int height = track.height ?? 0;
-    final int bitrate = track.bitrate ?? 0;
-    final String mimeType = (track.mimeType ?? '').replaceAll('video/', '');
+    // final int bitrate = track.bitrate ?? 0;
+    // final String mimeType = (track.mimeType ?? '').replaceAll('video/', '');
     final String trackName = preferredName ??
     "${height} p";
         // "${width}x$height ${BetterPlayerUtils.formatBitrate(bitrate)} $mimeType";
@@ -326,7 +325,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            SizedBox(width: isSelected ? 8 : 16),
+            // SizedBox(width: isSelected ? 8 : 16),
             Visibility(
                 visible: isSelected,
                 child: Icon(
