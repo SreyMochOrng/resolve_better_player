@@ -216,10 +216,11 @@ class MethodChannelVideoPlayer extends VideoPlayerPlatform {
         ) ??
         0;
 
-    // Sometimes the media server returns a absolute position far greater than 
-    // the datetime instance can handle. This caps the value to the maximum the datetime 
+    // Sometimes the media server returns a absolute position far greater than
+    // the datetime instance can handle. This caps the value to the maximum the datetime
     // can use.
-    if (milliseconds > 8640000000000000 || milliseconds < -8640000000000000) return null;
+    if (milliseconds > 8640000000000000 || milliseconds < -8640000000000000)
+      return null;
 
     if (milliseconds <= 0) return null;
 
@@ -431,7 +432,7 @@ class MethodChannelVideoPlayer extends VideoPlayerPlatform {
     //     creationParams: {'textureId': textureId!},
     //   );
     // } else {
-      return Texture(textureId: textureId!);
+    return Texture(textureId: textureId!);
     // }
   }
 

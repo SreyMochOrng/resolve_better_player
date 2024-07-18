@@ -244,13 +244,13 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
           children: [
             const SizedBox(width: 8),
             Visibility(
-                visible: isSelected,
-                child: Icon(
-                  Icons.check_outlined,
-                  color:
-                      betterPlayerControlsConfiguration.overflowModalTextColor,
-                ),),
-           SizedBox(width: isSelected ? 16 : 32),
+              visible: isSelected,
+              child: Icon(
+                Icons.check_outlined,
+                color: betterPlayerControlsConfiguration.overflowModalTextColor,
+              ),
+            ),
+            SizedBox(width: isSelected ? 16 : 32),
             Text(
               subtitlesSource.type == BetterPlayerSubtitlesSourceType.none
                   ? betterPlayerController!.translations.generalNone
@@ -327,13 +327,13 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
           children: [
             const SizedBox(width: 8),
             Visibility(
-                visible: isSelected,
-                child: Icon(
-                  size: 16,
-                  Icons.check_outlined,
-                  color:
-                      betterPlayerControlsConfiguration.overflowModalTextColor,
-                ),),
+              visible: isSelected,
+              child: Icon(
+                size: 16,
+                Icons.check_outlined,
+                color: betterPlayerControlsConfiguration.overflowModalTextColor,
+              ),
+            ),
             SizedBox(width: isSelected ? 16 : 32),
             Text(
               trackName,
