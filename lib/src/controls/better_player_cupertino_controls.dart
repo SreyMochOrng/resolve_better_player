@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:better_player/better_player.dart';
 import 'package:better_player/src/configuration/better_player_controls_configuration.dart';
 import 'package:better_player/src/controls/better_player_controls_state.dart';
 import 'package:better_player/src/controls/better_player_cupertino_progress_bar.dart';
@@ -296,6 +297,44 @@ class _BetterPlayerCupertinoControlsState
     );
   }
 
+  GestureDetector _buildQualityButton(
+    VideoPlayerController? controller,
+    Color backgroundColor,
+    Color iconColor,
+    double barHeight,
+    double iconSize,
+    double buttonPadding,
+  ) {
+    return GestureDetector(
+      onTap: () {
+        showQualitiesSelectionWidget();
+      },
+      child: AnimatedOpacity(
+        opacity: controlsNotVisible ? 0.0 : 1.0,
+        duration: _controlsConfiguration.controlsHideTime,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(10.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: backgroundColor,
+            ),
+            child: Container(
+              height: barHeight,
+              padding: EdgeInsets.symmetric(
+                horizontal: buttonPadding,
+              ),
+              child: Icon(
+                Icons.high_quality,
+                color: iconColor,
+                size: iconSize,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
   GestureDetector _buildMoreButton(
     VideoPlayerController? controller,
     Color backgroundColor,
@@ -527,6 +566,14 @@ class _BetterPlayerCupertinoControlsState
             const SizedBox(),
           const SizedBox(
             width: 4,
+          ),
+          _buildQualityButton(
+            _controller,
+            backgroundColor,
+            iconColor,
+            barHeight,
+            iconSize,
+            buttonPadding,
           ),
           if (_controlsConfiguration.enableOverflowMenu)
             _buildMoreButton(

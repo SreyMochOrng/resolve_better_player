@@ -87,7 +87,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
                   betterPlayerControlsConfiguration.qualitiesIcon,
                   translations.overflowMenuQuality, () {
                 Navigator.of(context).pop();
-                _showQualitiesSelectionWidget();
+                showQualitiesSelectionWidget();
               }),
             if (betterPlayerControlsConfiguration.enableAudioTracks)
               _buildMoreOptionsListRow(
@@ -130,7 +130,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
             const SizedBox(width: 16),
             Text(
               name,
-              style: _getOverflowMenuElementTextStyle(false),
+              style: _getOverflowMenuElementTextStyle(),
             ),
           ],
         ),
@@ -164,18 +164,19 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            SizedBox(width: isSelected ? 8 : 16),
+            const SizedBox(width: 8),
             Visibility(
-                visible: isSelected,
-                child: Icon(
-                  Icons.check_outlined,
-                  color:
-                      betterPlayerControlsConfiguration.overflowModalTextColor,
-                )),
-            const SizedBox(width: 16),
+              visible: isSelected,
+              child: Icon(
+                size: 16,
+                Icons.check_outlined,
+                color: betterPlayerControlsConfiguration.overflowModalTextColor,
+              ),
+            ),
+            SizedBox(width: isSelected ? 16 : 32),
             Text(
-              "$value x",
-              style: _getOverflowMenuElementTextStyle(isSelected),
+              value == 1.0 ? "Normal" : "${value}x",
+              style: _getOverflowMenuElementTextStyle(),
             )
           ],
         ),
@@ -241,21 +242,21 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            SizedBox(width: isSelected ? 8 : 16),
+            const SizedBox(width: 8),
             Visibility(
                 visible: isSelected,
                 child: Icon(
                   Icons.check_outlined,
                   color:
                       betterPlayerControlsConfiguration.overflowModalTextColor,
-                )),
-            const SizedBox(width: 16),
+                ),),
+           SizedBox(width: isSelected ? 16 : 32),
             Text(
               subtitlesSource.type == BetterPlayerSubtitlesSourceType.none
                   ? betterPlayerController!.translations.generalNone
                   : subtitlesSource.name ??
                       betterPlayerController!.translations.generalDefault,
-              style: _getOverflowMenuElementTextStyle(isSelected),
+              style: _getOverflowMenuElementTextStyle(),
             ),
           ],
         ),
@@ -266,7 +267,7 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
   ///Build both track and resolution selection
   ///Track selection is used for HLS / DASH videos
   ///Resolution selection is used for normal videos
-  void _showQualitiesSelectionWidget() {
+  void showQualitiesSelectionWidget() {
     // HLS / DASH
     final List<String> asmsTrackNames =
         betterPlayerController!.betterPlayerDataSource!.asmsTrackNames ?? [];
@@ -308,9 +309,8 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
     final int height = track.height ?? 0;
     // final int bitrate = track.bitrate ?? 0;
     // final String mimeType = (track.mimeType ?? '').replaceAll('video/', '');
-    final String trackName = preferredName ??
-    "${height} p";
-        // "${width}x$height ${BetterPlayerUtils.formatBitrate(bitrate)} $mimeType";
+    final String trackName = preferredName ?? "${height} p";
+    // "${width}x$height ${BetterPlayerUtils.formatBitrate(bitrate)} $mimeType";
 
     final BetterPlayerAsmsTrack? selectedTrack =
         betterPlayerController!.betterPlayerAsmsTrack;
@@ -325,18 +325,19 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            // SizedBox(width: isSelected ? 8 : 16),
+            const SizedBox(width: 8),
             Visibility(
                 visible: isSelected,
                 child: Icon(
+                  size: 16,
                   Icons.check_outlined,
                   color:
                       betterPlayerControlsConfiguration.overflowModalTextColor,
-                )),
-            const SizedBox(width: 16),
+                ),),
+            SizedBox(width: isSelected ? 16 : 32),
             Text(
               trackName,
-              style: _getOverflowMenuElementTextStyle(isSelected),
+              style: _getOverflowMenuElementTextStyle(),
             ),
           ],
         ),
@@ -356,18 +357,19 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
         padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
         child: Row(
           children: [
-            SizedBox(width: isSelected ? 8 : 16),
+            const SizedBox(width: 8),
             Visibility(
-                visible: isSelected,
-                child: Icon(
-                  Icons.check_outlined,
-                  color:
-                      betterPlayerControlsConfiguration.overflowModalTextColor,
-                )),
-            const SizedBox(width: 16),
+              visible: isSelected,
+              child: Icon(
+                size: 16,
+                Icons.check_outlined,
+                color: betterPlayerControlsConfiguration.overflowModalTextColor,
+              ),
+            ),
+            SizedBox(width: isSelected ? 16 : 32),
             Text(
               name,
-              style: _getOverflowMenuElementTextStyle(isSelected),
+              style: _getOverflowMenuElementTextStyle(),
             ),
           ],
         ),
@@ -426,7 +428,11 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
             const SizedBox(width: 16),
             Text(
               audioTrack.label!,
-              style: _getOverflowMenuElementTextStyle(isSelected),
+              style: TextStyle(
+                fontWeight: FontWeight.normal,
+                color: betterPlayerControlsConfiguration.overflowModalTextColor
+                    .withOpacity(0.7),
+              ),
             ),
           ],
         ),
@@ -434,13 +440,10 @@ abstract class BetterPlayerControlsState<T extends StatefulWidget>
     );
   }
 
-  TextStyle _getOverflowMenuElementTextStyle(bool isSelected) {
+  TextStyle _getOverflowMenuElementTextStyle() {
     return TextStyle(
-      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-      color: isSelected
-          ? betterPlayerControlsConfiguration.overflowModalTextColor
-          : betterPlayerControlsConfiguration.overflowModalTextColor
-              .withOpacity(0.7),
+      fontWeight: FontWeight.normal,
+      color: betterPlayerControlsConfiguration.overflowModalTextColor,
     );
   }
 
