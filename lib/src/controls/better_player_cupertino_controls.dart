@@ -324,7 +324,7 @@ class _BetterPlayerCupertinoControlsState
                 horizontal: buttonPadding,
               ),
               child: Icon(
-                Icons.high_quality,
+                _controlsConfiguration.qualitiesIcon,
                 color: iconColor,
                 size: iconSize,
               ),
