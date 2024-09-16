@@ -205,7 +205,7 @@ class BetterPlayerControlsConfiguration {
     this.overflowMenuIcon = Icons.more_vert_outlined,
     this.pipMenuIcon = Icons.picture_in_picture_outlined,
     this.playbackSpeedIcon = Icons.shutter_speed_outlined,
-    this.qualitiesIcon = Icons.hd_outlined,
+    this.qualitiesIcon = Icons.qualities,
     this.subtitlesIcon = Icons.closed_caption_outlined,
     this.audioTracksIcon = Icons.audiotrack_outlined,
     this.overflowMenuIconsColor = Colors.black,
